@@ -6,7 +6,6 @@
   <title>مبادرة نورني  </title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- القواعد العامة --- */
     * {
       margin: 0;
       padding: 0;
@@ -22,7 +21,6 @@
       text-decoration: none;
     }
     
-    /* --- قسم الهيرو (الاحتفاظ بالفكرة مع تطوير بسيط) --- */
     .hero {
       background: linear-gradient(45deg, #F1C40F, #F39C12);
       padding: 100px 20px;
@@ -71,7 +69,6 @@
       transform: scale(1.05);
     }
     
-    /* --- التنقل --- */
     .nav-bar {
       background: #fff;
       padding: 15px 0;
@@ -106,7 +103,6 @@
       background: #F39C12;
     }
     
-    /* --- الأساسيات المشتركة للأقسام --- */
     .section {
       padding: 80px 20px;
       text-align: center;
@@ -137,7 +133,6 @@
       border-radius: 2px;
     }
     
-    /* --- قسم عن المبادرة --- */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -165,7 +160,6 @@
       color: #777;
     }
     
-    /* --- قسم الخدمات --- */
     .services-grid {
       display: flex;
       flex-wrap: wrap;
@@ -217,7 +211,6 @@
       color: #555;
     }
     
-    /* --- قسم أعضاء الفريق --- */
     .team {
       background: #f0f0f0;
       padding: 80px 20px;
@@ -274,7 +267,6 @@
       font-size: 0.9rem;
     }
     
-    /* --- قسم الإنجازات --- */
     .achievements-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -301,7 +293,6 @@
       color: #777;
     }
     
-    /* --- قسم التواصل --- */
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
@@ -360,7 +351,6 @@
       background: #D35400;
     }
     
-    /* --- الفوتر --- */
     footer {
       background: #2C3E50;
       color: #fff;
@@ -395,7 +385,6 @@
       color: #E67E22;
     }
     
-    /* --- استجابة --- */
     @media (max-width: 768px) {
       .nav-bar {
         flex-wrap: wrap;
@@ -407,14 +396,12 @@
   </style>
 </head>
 <body>
-  <!-- قسم الهيرو -->
   <header class="hero">
     <h1>معًا لننير طريق المعرفة 💡</h1>
     <p>مبادرة تطوعية تهدف إلى نشر الوعي وتمكين الأفراد بالمعلومات التي تساعدهم على التطور وتحقيق النجاح.</p>
     <a href="#about" class="hero-btn">اكتشف المزيد</a>
   </header>
   
-  <!-- قائمة التنقل -->
   <nav class="nav-bar" id="navbar">
     <a href="#about" class="nav-link">عن المبادرة</a>
     <a href="#services" class="nav-link">خدماتنا</a>
@@ -423,7 +410,6 @@
     <a href="#contact" class="nav-link">تواصل معنا</a>
   </nav>
   
-  <!-- قسم عن المبادرة -->
   <section class="section" id="about">
     <h2 class="section-title">عن المبادرة ✨</h2>
     <div class="about-grid">
@@ -450,11 +436,9 @@
     </div>
   </section>
   
-  <!-- قسم الخدمات -->
   <section class="section" id="services">
     <h2 class="section-title">خدماتنا</h2>
     <div class="services-grid" id="servicesGrid">
-      <!-- سيتم إضافة بطاقات الخدمات بواسطة JavaScript -->
     </div>
     <button class="hero-btn" id="toggleServices" style="margin-top: 40px;">عرض المزيد</button>
     <div class="hidden-content" id="servicesExtra" style="display:none; margin-top:20px;">
@@ -462,15 +446,12 @@
     </div>
   </section>
   
-  <!-- قسم أعضاء الفريق -->
   <section class="section" id="members">
     <h2 class="section-title">أعضاء نورني 🌟</h2>
     <div class="team-grid" id="teamGrid">
-      <!-- سيتم إضافة أعضاء الفريق بواسطة JavaScript -->
     </div>
   </section>
   
-  <!-- قسم الإنجازات -->
   <section class="section" id="achievements">
     <h2 class="section-title">🏆 إنجازات نورني</h2>
     <div class="achievements-grid">
@@ -486,7 +467,6 @@
     </div>
   </section>
   
-  <!-- قسم التواصل -->
   <section class="section" id="contact">
     <h2 class="section-title">تواصل معنا 📬</h2>
     <div class="contact-form">
@@ -502,7 +482,6 @@
     </div>
   </section>
   
-  <!-- الفوتر -->
   <footer>
     <ul>
       <li><a href="#hero">الصفحة الرئيسية</a></li>
@@ -515,9 +494,7 @@
     <p>مطور الموقع: <a href="https://badrprog.vercel.app/" target="_blank">بدر الزعبي</a></p>
   </footer>
   
-  <!-- --- JavaScript للتفاعلات والأنيميشن --- -->
   <script>
-    /* تفعيل تأثير الظهور التدريجي للأقسام عند التمرير */
     const sections = document.querySelectorAll('.section');
     const options = { threshold: 0.2 };
     const observer = new IntersectionObserver((entries, observer) => {
@@ -530,7 +507,6 @@
     }, options);
     sections.forEach(section => observer.observe(section));
     
-    /* تنقل سلس عند النقر على روابط القائمة */
     document.querySelectorAll('.nav-bar a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -538,7 +514,6 @@
       });
     });
     
-    /* تمييز الرابط النشط بناءً على القسم الظاهر */
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
       let currentSection = '';
@@ -556,7 +531,6 @@
       });
     });
     
-    /* زر عرض/إخفاء المحتوى الإضافي في قسم عن المبادرة */
     const toggleAboutBtn = document.getElementById('toggleAbout');
     const aboutExtra = document.getElementById('aboutExtra');
     toggleAboutBtn.addEventListener('click', () => {
@@ -569,7 +543,6 @@
       }
     });
     
-    /* إضافة بطاقات الخدمات باستخدام JavaScript */
     const servicesData = [
       { emoji: '📹', title: 'محتوى تعليمي متميز', text: 'نوفر مقاطع فيديو ودروس تعليمية عالية الجودة.' },
       { emoji: '💼', title: 'استشارات أعمال مخصصة', text: 'نساعدك في وضع استراتيجيات ناجحة لتحقيق أهدافك.' },
@@ -586,7 +559,6 @@
       servicesGrid.appendChild(card);
     });
     
-    /* زر عرض/إخفاء المحتوى الإضافي في قسم الخدمات */
     const toggleServicesBtn = document.getElementById('toggleServices');
     const servicesExtra = document.getElementById('servicesExtra');
     toggleServicesBtn.addEventListener('click', () => {
@@ -599,7 +571,6 @@
       }
     });
     
-    /* إضافة بطاقات أعضاء الفريق باستخدام JavaScript */
     const teamData = [
       { img: './assets/img/abd.jpg', name: 'عبدالله السيلاوي', role: 'علاقات عامة ولجنة التخطيط والتطوير' },
       { img: './assets/img/fa.jpg', name: 'محمد فيومي', role: 'تقني المبادرة وأمين صندوق نورني' },
@@ -618,7 +589,6 @@
       teamGrid.appendChild(card);
     });
     
-    /* تأثير العد التنازلي للإنجازات */
     document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll(".counter");
       const speed = 200;
@@ -648,7 +618,6 @@
       observerAchievements.observe(achievementsSection);
     });
     
-    /* محاكاة إرسال نموذج التواصل */
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
