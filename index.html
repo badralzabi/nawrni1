@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مبادرة نورني  </title>
+  <title>مبادرة نورني - موقع متطور</title>
+  <link rel="icon" href="./assets/img/nawrni_logo.jpg" type="image/x-icon" >
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -20,7 +21,6 @@
     a {
       text-decoration: none;
     }
-    
     .hero {
       background: linear-gradient(45deg, #F1C40F, #F39C12);
       padding: 100px 20px;
@@ -68,7 +68,6 @@
       background: #D35400;
       transform: scale(1.05);
     }
-    
     .nav-bar {
       background: #fff;
       padding: 15px 0;
@@ -102,7 +101,35 @@
       height: 2px;
       background: #F39C12;
     }
-    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 10px 0;
+      min-width: 150px;
+      z-index: 1001;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 15px;
+      color: #555;
+      white-space: nowrap;
+      transition: background 0.3s;
+    }
+    .dropdown-menu a:hover {
+      background: #f0f0f0;
+      color: #F39C12;
+    }
     .section {
       padding: 80px 20px;
       text-align: center;
@@ -132,7 +159,6 @@
       background: #F1C40F;
       border-radius: 2px;
     }
-    
     .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -144,12 +170,12 @@
       background: #fff;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .about-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
     .about-card h6 {
       color: #F39C12;
@@ -159,7 +185,6 @@
     .about-card p {
       color: #777;
     }
-    
     .services-grid {
       display: flex;
       flex-wrap: wrap;
@@ -210,7 +235,6 @@
       z-index: 1;
       color: #555;
     }
-    
     .team {
       background: #f0f0f0;
       padding: 80px 20px;
@@ -244,14 +268,14 @@
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
       overflow: hidden;
     }
     .team-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     .team-card img {
       width: 100%;
@@ -266,7 +290,6 @@
       color: #777;
       font-size: 0.9rem;
     }
-    
     .achievements-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -278,7 +301,7 @@
       background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
     }
     .achievement-item:hover {
@@ -292,14 +315,13 @@
     .achievement-item p {
       color: #777;
     }
-    
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
       background: #fff;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -350,7 +372,6 @@
     .contact-form button:hover {
       background: #D35400;
     }
-    
     footer {
       background: #2C3E50;
       color: #fff;
@@ -384,7 +405,6 @@
     footer p a:hover {
       color: #E67E22;
     }
-    
     @media (max-width: 768px) {
       .nav-bar {
         flex-wrap: wrap;
@@ -392,6 +412,19 @@
       .nav-bar a {
         margin: 10px;
       }
+    }
+    .con {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 3px;
+    }
+    .insta {
+      width: 35%;
+      transition: all 0.3s ease-in-out;
+    }
+    .insta:hover {
+      width: 45%;
     }
   </style>
 </head>
@@ -401,15 +434,21 @@
     <p>مبادرة تطوعية تهدف إلى نشر الوعي وتمكين الأفراد بالمعلومات التي تساعدهم على التطور وتحقيق النجاح.</p>
     <a href="#about" class="hero-btn">اكتشف المزيد</a>
   </header>
-  
   <nav class="nav-bar" id="navbar">
     <a href="#about" class="nav-link">عن المبادرة</a>
     <a href="#services" class="nav-link">خدماتنا</a>
     <a href="#members" class="nav-link">أعضاء نورني</a>
     <a href="#achievements" class="nav-link">إنجازات</a>
     <a href="#contact" class="nav-link">تواصل معنا</a>
+    <div class="dropdown">
+      <a href="#" class="nav-link dropdown-toggle">السوشيال ميديا</a>
+      <div class="dropdown-menu">
+        <a href="https://www.instagram.com/jordan_nawrni/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100086168905339&mibextid=ZbWKwL" target="_blank">Facebook</a>
+        <a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a>
+      </div>
+    </div>
   </nav>
-  
   <section class="section" id="about">
     <h2 class="section-title">عن المبادرة ✨</h2>
     <div class="about-grid">
@@ -435,23 +474,23 @@
       <p>مزيد من التفاصيل حول رؤيتنا وخططنا المستقبلية لدعم المجتمع!</p>
     </div>
   </section>
-  
+  <div class="con">
+    <a href="https://www.instagram.com/jordan_nawrni/" target="_blank"><img src="./assets/img/insta.png" class="insta" alt="Instgram_img"></a>
+    <a href="https://www.facebook.com/profile.php?id=100086168905339&mibextid=ZbWKwL" target="_blank"><img src="./assets/img/facebook.png" class="insta" alt="Facebook_img"></a>
+    <a href="#"><img src="./assets/img/whats.png" class="insta" alt="Whatsapp_img"></a>
+  </div>
   <section class="section" id="services">
     <h2 class="section-title">خدماتنا</h2>
-    <div class="services-grid" id="servicesGrid">
-    </div>
+    <div class="services-grid" id="servicesGrid"></div>
     <button class="hero-btn" id="toggleServices" style="margin-top: 40px;">عرض المزيد</button>
     <div class="hidden-content" id="servicesExtra" style="display:none; margin-top:20px;">
       <p>خدمات إضافية لدعم تطلعاتك وتطوير مهاراتك!</p>
     </div>
   </section>
-  
   <section class="section" id="members">
     <h2 class="section-title">أعضاء نورني 🌟</h2>
-    <div class="team-grid" id="teamGrid">
-    </div>
+    <div class="team-grid" id="teamGrid"></div>
   </section>
-  
   <section class="section" id="achievements">
     <h2 class="section-title">🏆 إنجازات نورني</h2>
     <div class="achievements-grid">
@@ -466,7 +505,6 @@
       <div class="achievement-item"><h3><span class="counter" data-target="3655">0</span>+</h3><p>ساعة تطوعية في المساعدة 🙏</p></div>
     </div>
   </section>
-  
   <section class="section" id="contact">
     <h2 class="section-title">تواصل معنا 📬</h2>
     <div class="contact-form">
@@ -481,7 +519,6 @@
       </form>
     </div>
   </section>
-  
   <footer>
     <ul>
       <li><a href="#hero">الصفحة الرئيسية</a></li>
@@ -493,33 +530,34 @@
     </ul>
     <p>مطور الموقع: <a href="https://badrprog.vercel.app/" target="_blank">بدر الزعبي</a></p>
   </footer>
-  
   <script>
     const sections = document.querySelectorAll('.section');
-    const options = { threshold: 0.2 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-    sections.forEach(section => observer.observe(section));
-    
-    document.querySelectorAll('.nav-bar a').forEach(link => {
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach(section => section.classList.add('visible'));
+    } else {
+      const options = { threshold: 0.2 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+      sections.forEach(section => observer.observe(section));
+    }
+    document.querySelectorAll('.nav-bar a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
-    
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
       let currentSection = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if(pageYOffset >= sectionTop - 100) {
+        if (pageYOffset >= sectionTop - 100) {
           currentSection = section.getAttribute('id');
         }
       });
@@ -530,7 +568,6 @@
         }
       });
     });
-    
     const toggleAboutBtn = document.getElementById('toggleAbout');
     const aboutExtra = document.getElementById('aboutExtra');
     toggleAboutBtn.addEventListener('click', () => {
@@ -542,7 +579,6 @@
         toggleAboutBtn.textContent = 'عرض المزيد';
       }
     });
-    
     const servicesData = [
       { emoji: '📹', title: 'محتوى تعليمي متميز', text: 'نوفر مقاطع فيديو ودروس تعليمية عالية الجودة.' },
       { emoji: '💼', title: 'استشارات أعمال مخصصة', text: 'نساعدك في وضع استراتيجيات ناجحة لتحقيق أهدافك.' },
@@ -558,7 +594,6 @@
                         <p>${service.text}</p>`;
       servicesGrid.appendChild(card);
     });
-    
     const toggleServicesBtn = document.getElementById('toggleServices');
     const servicesExtra = document.getElementById('servicesExtra');
     toggleServicesBtn.addEventListener('click', () => {
@@ -570,7 +605,6 @@
         toggleServicesBtn.textContent = 'عرض المزيد';
       }
     });
-    
     const teamData = [
       { img: './assets/img/abd.jpg', name: 'عبدالله السيلاوي', role: 'علاقات عامة ولجنة التخطيط والتطوير' },
       { img: './assets/img/fa.jpg', name: 'محمد فيومي', role: 'تقني المبادرة وأمين صندوق نورني' },
@@ -588,7 +622,6 @@
                         <p>${member.role}</p>`;
       teamGrid.appendChild(card);
     });
-    
     document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll(".counter");
       const speed = 200;
@@ -617,7 +650,6 @@
       }, { threshold: 0.5 });
       observerAchievements.observe(achievementsSection);
     });
-    
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
