@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مبادرة نورني - موقع متطور</title>
+  <title>مبادرة نورني </title>
   <link rel="icon" href="./assets/img/nawrni_logo.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -231,8 +231,6 @@
       border-radius: 2px;
     }
     .team-grid {
-      display: -ms-grid;
-      display: -webkit-grid;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
@@ -257,18 +255,17 @@
       width: 100%;
       border-radius: 50%;
       margin-bottom: 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .team-card h3 {
-      color: #F39C12;
-      margin-bottom: 5px;
+    .team-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
-    .team-card p {
-      color: #777;
-      font-size: 0.9rem;
-    }
+    .team-card h3 { color: #F39C12; margin-bottom: 5px; }
+    .team-card p { color: #777; font-size: 0.9rem; }
     .achievements-grid {
-      display: -ms-grid;
-      display: -webkit-grid;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
@@ -308,10 +305,7 @@
       transform: rotate(45deg);
       z-index: 0;
     }
-    .contact-form form {
-      position: relative;
-      z-index: 1;
-    }
+    .contact-form form { position: relative; z-index: 1; }
     .contact-form label {
       display: block;
       margin-bottom: 10px;
@@ -327,10 +321,7 @@
       border-radius: 10px;
       font-size: 1rem;
     }
-    .contact-form textarea {
-      height: 150px;
-      resize: none;
-    }
+    .contact-form textarea { height: 150px; resize: none; }
     .contact-form button {
       background: #E67E22;
       color: #fff;
@@ -348,15 +339,8 @@
       padding: 40px 20px;
       text-align: center;
     }
-    footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-    footer ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+    footer ul { list-style: none; padding: 0; margin: 20px 0; }
+    footer ul li { display: inline; margin: 0 15px; }
     footer ul li a {
       color: #F1C40F;
       font-weight: 600;
@@ -381,6 +365,28 @@
       transition: all 0.3s ease-in-out;
     }
     .insta:hover { width: 45%; }
+    /* Back-to-Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: #E67E22;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s;
+      z-index: 1001;
+      font-size: 1.5rem;
+    }
+    #backToTop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
@@ -491,6 +497,7 @@
     </ul>
     <p>مطور الموقع: <a href="https://badrprog.vercel.app/" target="_blank">بدر الزعبي</a></p>
   </footer>
+  <button id="backToTop">↑</button>
   <script>
     const sections = document.querySelectorAll('.section');
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -617,6 +624,17 @@
       e.preventDefault();
       alert('تم إرسال الرسالة بنجاح!');
       contactForm.reset();
+    });
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
