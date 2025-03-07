@@ -4,23 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مبادرة نورني - موقع متطور</title>
-  <link rel="icon" href="./assets/img/nawrni_logo.jpg" type="image/x-icon" >
+  <link rel="icon" href="./assets/img/nawrni_logo.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Cairo', sans-serif;
       background: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
     .hero {
       background: linear-gradient(45deg, #F1C40F, #F39C12);
       padding: 100px 20px;
@@ -32,10 +26,8 @@
     .hero::after {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
       background: rgba(255, 255, 255, 0.1);
       transform: rotate(30deg);
       z-index: 1;
@@ -87,9 +79,7 @@
       transition: color 0.3s;
     }
     .nav-bar a.active,
-    .nav-bar a:hover {
-      color: #F39C12;
-    }
+    .nav-bar a:hover { color: #F39C12; }
     .nav-bar a.active::after,
     .nav-bar a:hover::after {
       content: '';
@@ -101,24 +91,18 @@
       height: 2px;
       background: #F39C12;
     }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+    .dropdown { position: relative; display: inline-block; }
     .dropdown .dropdown-menu {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
+      top: 100%; left: 0;
       background: #fff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       padding: 10px 0;
       min-width: 150px;
       z-index: 1001;
     }
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
+    .dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu a {
       display: block;
       padding: 8px 15px;
@@ -126,10 +110,7 @@
       white-space: nowrap;
       transition: background 0.3s;
     }
-    .dropdown-menu a:hover {
-      background: #f0f0f0;
-      color: #F39C12;
-    }
+    .dropdown-menu a:hover { background: #f0f0f0; color: #F39C12; }
     .section {
       padding: 80px 20px;
       text-align: center;
@@ -137,10 +118,7 @@
       transform: translateY(20px);
       transition: all 0.6s ease-in-out;
     }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .section.visible { opacity: 1; transform: translateY(0); }
     .section-title {
       font-size: 2.5rem;
       font-weight: 700;
@@ -170,21 +148,19 @@
       background: #fff;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .about-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
     .about-card h6 {
       color: #F39C12;
       font-size: 1.5rem;
       margin-bottom: 15px;
     }
-    .about-card p {
-      color: #777;
-    }
+    .about-card p { color: #777; }
     .services-grid {
       display: flex;
       flex-wrap: wrap;
@@ -210,10 +186,8 @@
     .service-card::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
       background: rgba(243,156,18,0.1);
       transform: rotate(45deg);
       z-index: 0;
@@ -257,6 +231,8 @@
       border-radius: 2px;
     }
     .team-grid {
+      display: -ms-grid;
+      display: -webkit-grid;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
@@ -268,14 +244,14 @@
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
       overflow: hidden;
     }
     .team-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
     .team-card img {
       width: 100%;
@@ -291,6 +267,8 @@
       font-size: 0.9rem;
     }
     .achievements-grid {
+      display: -ms-grid;
+      display: -webkit-grid;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
@@ -301,37 +279,31 @@
       background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .achievement-item:hover {
-      transform: scale(1.05);
-    }
+    .achievement-item:hover { transform: scale(1.05); }
     .achievement-item h3 {
       color: #E67E22;
       font-size: 2rem;
       font-weight: 700;
     }
-    .achievement-item p {
-      color: #777;
-    }
+    .achievement-item p { color: #777; }
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
       background: #fff;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       position: relative;
       overflow: hidden;
     }
     .contact-form::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
       background: linear-gradient(45deg, rgba(243,156,18,0.2), rgba(241,196,15,0.2));
       transform: rotate(45deg);
       z-index: 0;
@@ -369,9 +341,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    .contact-form button:hover {
-      background: #D35400;
-    }
+    .contact-form button:hover { background: #D35400; }
     footer {
       background: #2C3E50;
       color: #fff;
@@ -392,26 +362,13 @@
       font-weight: 600;
       transition: color 0.3s;
     }
-    footer ul li a:hover {
-      color: #E67E22;
-    }
-    footer p {
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-    footer p a {
-      color: #F1C40F;
-    }
-    footer p a:hover {
-      color: #E67E22;
-    }
+    footer ul li a:hover { color: #E67E22; }
+    footer p { margin-top: 20px; font-size: 0.9rem; }
+    footer p a { color: #F1C40F; }
+    footer p a:hover { color: #E67E22; }
     @media (max-width: 768px) {
-      .nav-bar {
-        flex-wrap: wrap;
-      }
-      .nav-bar a {
-        margin: 10px;
-      }
+      .nav-bar { flex-wrap: wrap; }
+      .nav-bar a { margin: 10px; }
     }
     .con {
       display: flex;
@@ -423,9 +380,7 @@
       width: 35%;
       transition: all 0.3s ease-in-out;
     }
-    .insta:hover {
-      width: 45%;
-    }
+    .insta:hover { width: 45%; }
   </style>
 </head>
 <body>
@@ -475,9 +430,15 @@
     </div>
   </section>
   <div class="con">
-    <a href="https://www.instagram.com/jordan_nawrni/" target="_blank"><img src="./assets/img/insta.png" class="insta" alt="Instgram_img"></a>
-    <a href="https://www.facebook.com/profile.php?id=100086168905339&mibextid=ZbWKwL" target="_blank"><img src="./assets/img/facebook.png" class="insta" alt="Facebook_img"></a>
-    <a href="#"><img src="./assets/img/whats.png" class="insta" alt="Whatsapp_img"></a>
+    <a href="https://www.instagram.com/jordan_nawrni/" target="_blank">
+      <img src="./assets/img/insta.png" class="insta" alt="Instgram_img">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100086168905339&mibextid=ZbWKwL" target="_blank">
+      <img src="./assets/img/facebook.png" class="insta" alt="Facebook_img">
+    </a>
+    <a href="#">
+      <img src="./assets/img/whats.png" class="insta" alt="Whatsapp_img">
+    </a>
   </div>
   <section class="section" id="services">
     <h2 class="section-title">خدماتنا</h2>
@@ -532,7 +493,8 @@
   </footer>
   <script>
     const sections = document.querySelectorAll('.section');
-    if (!('IntersectionObserver' in window)) {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (!('IntersectionObserver' in window) || isSafari) {
       sections.forEach(section => section.classList.add('visible'));
     } else {
       const options = { threshold: 0.2 };
